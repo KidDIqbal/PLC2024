@@ -4,8 +4,13 @@ ask prompt =
   putStrLn prompt
   line <- getLine
   if line == ""
-    then ask prompt
-    else putStrLn ("you said: " ++ reverse line)
+    then do
+      let newPrompt = prompt ++ "!"
+      ask newPrompt
+    else if line == "quit" then print("quitting..")
+    else do
+      putStrLn ("you said: " ++ reverse line) -- reverses the string chars
+      ask prompt
 
 main :: IO ()
 main =
