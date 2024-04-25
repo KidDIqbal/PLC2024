@@ -38,6 +38,7 @@ toString value = show value
 -- string concatenation:
 greet1 = "hello " ++ name ++ (toString 123)
 -- the same, but with the operator as a function (like Lisp):
-greet2 = (++) "hello " name
+greet2 name10 = (++) "hello " name10
+meer = putStrLn (greet2 "John")
 -- concatenating more than 2 strings:
 greet3 = concat ["hello ", name, toString 123]
